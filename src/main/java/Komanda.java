@@ -11,4 +11,8 @@ public class Komanda {
         this.pavadinimas = pavadinimas;
         this.treneris = treneris;
     }
+
+    public List<Zaidejas> getZaidejai() {
+        return zaidejai;
+    }
 }

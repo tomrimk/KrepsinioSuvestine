@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 import static java.lang.Double.parseDouble;
 import static java.lang.Integer.parseInt;
+import static java.lang.Integer.remainderUnsigned;
 
 public class Main {
 
@@ -83,12 +84,12 @@ public class Main {
     public static void main(String[] args) {
 
         Taisykles taisykles = new Taisykles();
+        int pasirinkimas = 0;
         List<Komanda> komandos = new ArrayList<>();
         List<Teisejas> teisejai = new ArrayList<>();
         List<Zaidejas> zaidejai = new ArrayList<>();
         List<Zaidejas> pirmosKomandosPasirinktiZaidejai = new ArrayList<>();
         List<Zaidejas> antrosKomandosPasirinktiZaidejai = new ArrayList<>();
-
 
         Scanner user_input = new Scanner(System.in);
 
@@ -113,7 +114,7 @@ public class Main {
         System.out.println("Pasirinkite teisėją: ");
         int ts = 1;
         for (Teisejas t:teisejai) {
-            System.out.println(ts + ". ");
+            System.out.print(ts + ". ");
             System.out.println(t.toString());
             ts++;
         }
@@ -126,7 +127,50 @@ public class Main {
         Arena arena = new Arena(ivestaArena);
 
         Rungtynes rungtynes = new Rungtynes(pirmaKomanda,antraKomanda,pasirinktasTeisejas,arena,taisykles);
-
+        rungtynes.isNew();
+        System.out.println("RUNGTYNĖS PRASIDĖJO");
+        do {
+            System.out.println("Pasirinkite veiksmą:\n" +
+                    "1. Įmestas Dvitaškis" +
+                    "2. Įmestas Tritaškis" +
+                    "3. Įmesta Bauda" +
+                    "4. Pražanga" +
+                    "5. Minutės pertraukėlė" +
+                    "6. Rungtynių pabaiga.");
+            pasirinkimas = user_input.nextInt();
+            switch (pasirinkimas){
+                case 1:
+                    System.out.println("Dvitaškį įmetė numeris: ");
+                    int zaidejoNumeris = user_input.nextInt();
+                    rungtynes.pelnytiTaskai(zaidejoNumeris, 2);
+//                    Dvitaskis
+                    break;
+                case 2:
+//                    Tritaskis
+                    System.out.println("Tritaškį įmetė numeris: ");
+                    zaidejoNumeris = user_input.nextInt();
+                    rungtynes.pelnytiTaskai(zaidejoNumeris, 3);
+                    break;
+                case 3:
+//                    Bauda
+                    System.out.println("Baudą įmetė numeris: ");
+                    zaidejoNumeris = user_input.nextInt();
+                    rungtynes.pelnytiTaskai(zaidejoNumeris, 1);
+                    break;
+                case 4:
+//                    Prazanga
+                    break;
+                case 5:
+//                    Minutes pertraukele
+                    break;
+                case 6:
+//                    Rungtyniu pabaiga
+                    break;
+                default:
+                    System.out.println("Tokio pasirinkimo nėra.");
+                    break;
+            }
+        } while(pasirinkimas != 6);
 
     }
 }

@@ -1,5 +1,7 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class Rungtynes {
     private Komanda pirmaKomanda;
@@ -18,6 +20,14 @@ public class Rungtynes {
         this.taisykles = taisykles;
     }
 
+    public int getPirmosKomandosTaskuSkaicius() {
+        return pirmosKomandosTaskuSkaicius;
+    }
+
+    public int getAntrosKomandosTaskuSkaicius() {
+        return antrosKomandosTaskuSkaicius;
+    }
+
     public void setPirmosKomandosTaskuSkaicius(int pirmosKomandosTaskuSkaicius) {
         this.pirmosKomandosTaskuSkaicius = pirmosKomandosTaskuSkaicius;
     }
@@ -26,9 +36,62 @@ public class Rungtynes {
         this.antrosKomandosTaskuSkaicius = antrosKomandosTaskuSkaicius;
     }
 
+    public void isNew(){
+        File f = new File("C:/Users/Tomas/Desktop/PI15B/JAVA/PirmaUzduotis/rungtyniuLog.txt");
+        f.delete();
+    }
+
+    public void pelnytiTaskai(int numeris, int taskuSkaicius){
+        String fileName = "C:/Users/Tomas/Desktop/PI15B/JAVA/PirmaUzduotis/rungtyniuLog.txt";
+        FileWriter fw = null;
+        BufferedWriter bw = null;
+        String content = "";
+        try {
+            fw = new FileWriter(fileName, true);
+            bw = new BufferedWriter(fw);
+            for (int i = 0; i < pirmaKomanda.getZaidejai().size(); i++) {
+                if (pirmaKomanda.getZaidejai().get(i).getNumeris() == numeris){
+                    setPirmosKomandosTaskuSkaicius(pirmosKomandosTaskuSkaicius + taskuSkaicius);
+                    content = pirmaKomanda.getZaidejai().get(i).getVardas() + " " +
+                            pirmaKomanda.getZaidejai().get(i).getPavarde() + " Pelnė " + taskuSkaicius + " taškus. " +
+                            " Rezultatas: " + getPirmosKomandosTaskuSkaicius() + " - " + getAntrosKomandosTaskuSkaicius();
+                    break;
+                }
+            }
+            for (int i = 0; i < antraKomanda.getZaidejai().size(); i++) {
+                if (antraKomanda.getZaidejai().get(i).getNumeris() == numeris){
+                    setAntrosKomandosTaskuSkaicius(antrosKomandosTaskuSkaicius + taskuSkaicius);
+                    content = antraKomanda.getZaidejai().get(i).getVardas() + " " +
+                            antraKomanda.getZaidejai().get(i).getPavarde() + " Pelnė " + taskuSkaicius + " taškus. " +
+                            " Rezultatas: " + getPirmosKomandosTaskuSkaicius() + " - " + getAntrosKomandosTaskuSkaicius();;
+
+                    break;
+                }
+            }
+            bw.write(content);
+            bw.newLine();
+
+        } catch (IOException e){
+            System.out.println(e.getMessage());
+        } finally {
+
+            try {
+
+                if (bw != null)
+                    bw.close();
+
+                if (fw != null)
+                    fw.close();
+
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
+    }
+
     @Override
     public String toString() {
-        if(pirmosKomandosTaskuSkaicius > antrosKomandosTaskuSkaicius){
+        if(pirmosKomandosTaskuSkaicius >= antrosKomandosTaskuSkaicius){
             return pirmaKomanda + " " + pirmosKomandosTaskuSkaicius + " - "
                     + antrosKomandosTaskuSkaicius + " " + antraKomanda + "\nLaimi " + pirmaKomanda;
         } else {

@@ -13,6 +13,18 @@ public class Zaidejas {
         this.numeris = numeris;
     }
 
+    public int getNumeris() {
+        return numeris;
+    }
+
+    public String getVardas() {
+        return vardas;
+    }
+
+    public String getPavarde() {
+        return pavarde;
+    }
+
     @Override
     public String toString() {
         return "Vardas='" + vardas + '\'' +
