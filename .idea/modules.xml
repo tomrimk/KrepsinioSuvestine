@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/PirmaUzduotis.iml" filepath="$PROJECT_DIR$/.idea/modules/PirmaUzduotis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/PirmaUzduotis_main.iml" filepath="$PROJECT_DIR$/.idea/modules/PirmaUzduotis_main.iml" group="PirmaUzduotis" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/PirmaUzduotis_test.iml" filepath="$PROJECT_DIR$/.idea/modules/PirmaUzduotis_test.iml" group="PirmaUzduotis" />
+    </modules>
+  </component>
+</project>
