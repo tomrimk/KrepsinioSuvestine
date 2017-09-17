@@ -6,4 +6,14 @@ public class Treneris {
         this.vardas = vardas;
         this.pavarde = pavarde;
     }
+
+    public String getVardas() {
+        return vardas;
+    }
+
+    public String getPavarde() {
+        return pavarde;
+    }
+
+    public Treneris(){};
 }

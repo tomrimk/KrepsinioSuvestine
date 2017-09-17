@@ -167,6 +167,9 @@ public class Main {
                     break;
                 case 5:
 //                    Minutes pertraukele
+                    System.out.println("Kuri komanda paprašė minutės pertraukėlės?");
+                    int paprase = user_input.nextInt();
+                    rungtynes.minutesPertraukele(paprase);
                     break;
                 case 6:
                     rungtynes.toString();

@@ -19,4 +19,8 @@ public class Komanda {
     public List<Zaidejas> getZaidejai() {
         return zaidejai;
     }
+
+    public Treneris getTreneris() {
+        return treneris;
+    }
 }

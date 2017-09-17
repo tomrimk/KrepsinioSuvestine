@@ -1,7 +1,11 @@
-Gintautas Rimkus Pelnė 2 tašką(-us).  Rezultatas: 0 - 2
-Tomas Rimkus Pelnė 3 tašką(-us).  Rezultatas: 3 - 2
-Tomas Rimkus Pelnė 2 tašką(-us).  Rezultatas: 5 - 2
-Gintautas Rimkus Pelnė 2 tašką(-us).  Rezultatas: 5 - 4
-Tomas Rimkus prasižengė prieš Gintautas Rimkus
-Gintautas Rimkus Pelnė 1 tašką(-us).  Rezultatas: 5 - 5
-Tomas Rimkus Pelnė 2 tašką(-us).  Rezultatas: 7 - 5
+
+Tomas Rimkus Pelnė 2 tašką(-us).  Rezultatas: 2 - 0
+Darius Rimkus Pelnė 3 tašką(-us).  Rezultatas: 5 - 0
+Tomas Rimkus prasižengė prieš J�rate Rimkuviene
+J�rate Rimkuviene Pelnė 1 tašką(-us).  Rezultatas: 5 - 1
+J�rate Rimkuviene prasižengė prieš Tomas Rimkus
+Pirmos komandos treneris Rokas Markevičius paprašė minutės pertraukėlės.
+Darius Rimkus Pelnė 3 tašką(-us).  Rezultatas: 8 - 1
+null null prasižengė prieš Tomas Rimkus
+Tomas Rimkus Pelnė 1 tašką(-us).  Rezultatas: 9 - 1
+Tomas Rimkus Pelnė 1 tašką(-us).  Rezultatas: 10 - 1

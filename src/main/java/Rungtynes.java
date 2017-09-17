@@ -1,7 +1,4 @@
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 
 public class Rungtynes {
     private Komanda pirmaKomanda;
@@ -78,18 +75,7 @@ public class Rungtynes {
         } catch (IOException e){
             System.out.println(e.getMessage());
         } finally {
-
-            try {
-
-                if (bw != null)
-                    bw.close();
-
-                if (fw != null)
-                    fw.close();
-
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
+            checkError(bw, fw);
         }
     }
 
@@ -130,20 +116,53 @@ public class Rungtynes {
         } catch (IOException e){
             System.out.println(e.getMessage());
         } finally {
-
-            try {
-
-                if (bw != null)
-                    bw.close();
-
-                if (fw != null)
-                    fw.close();
-
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
+            checkError(bw, fw);
         }
 
+    }
+
+    public void minutesPertraukele(int komanda){
+        String fileName = "C:/Users/Tomas/Desktop/PI15B/JAVA/PirmaUzduotis/rungtyniuLog.txt";
+        FileWriter fw = null;
+        BufferedWriter bw = null;
+        String content = "";
+        Treneris treneris = new Treneris();
+        try {
+            if(komanda == 1){
+                treneris = pirmaKomanda.getTreneris();
+                content = "Pirmos komandos treneris " + treneris.getVardas() + " " + treneris.getPavarde()
+                        + " paprašė minutės pertraukėlės.";
+            } else {
+                treneris = antraKomanda.getTreneris();
+                content = "Antros komandos treneris " + treneris.getVardas() + " " + treneris.getPavarde()
+                        + " paprašė minutės pertraukėlės.";
+            }
+
+            fw = new FileWriter(fileName, true);
+            bw = new BufferedWriter(fw);
+
+            bw.write(content);
+            bw.newLine();
+
+        } catch (IOException e){
+            System.out.println(e.getMessage());
+        } finally {
+            checkError(bw, fw);
+        }
+    }
+
+    public void checkError(BufferedWriter bw, FileWriter fw){
+        try {
+
+            if (bw != null)
+                bw.close();
+
+            if (fw != null)
+                fw.close();
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
 
     @Override
