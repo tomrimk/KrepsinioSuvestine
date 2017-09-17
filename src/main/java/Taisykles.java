@@ -1,6 +1,9 @@
 public class Taisykles {
-    private int prazanguSkaicius;
     private String pavadinimas;
+
+    public Taisykles(String pavadinimas) {
+        this.pavadinimas = pavadinimas;
+    }
 
     public Taisykles() {
 

@@ -83,7 +83,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Taisykles taisykles = new Taisykles();
+        Taisykles taisykles = new Taisykles("Pražanga");
         int pasirinkimas = 0;
         List<Komanda> komandos = new ArrayList<>();
         List<Teisejas> teisejai = new ArrayList<>();
@@ -131,12 +131,12 @@ public class Main {
         System.out.println("RUNGTYNĖS PRASIDĖJO");
         do {
             System.out.println("Pasirinkite veiksmą:\n" +
-                    "1. Įmestas Dvitaškis" +
-                    "2. Įmestas Tritaškis" +
-                    "3. Įmesta Bauda" +
-                    "4. Pražanga" +
-                    "5. Minutės pertraukėlė" +
-                    "6. Rungtynių pabaiga.");
+                    "1. Įmestas Dvitaškis\n" +
+                    "2. Įmestas Tritaškis\n" +
+                    "3. Įmesta Bauda\n" +
+                    "4. Pražanga\n" +
+                    "5. Minutės pertraukėlė\n" +
+                    "6. Rungtynių pabaiga");
             pasirinkimas = user_input.nextInt();
             switch (pasirinkimas){
                 case 1:
@@ -158,12 +158,18 @@ public class Main {
                     rungtynes.pelnytiTaskai(zaidejoNumeris, 1);
                     break;
                 case 4:
+                    System.out.println("Prasižengusio numeris: ");
+                    zaidejoNumeris = user_input.nextInt();
+                    System.out.println("Prasižengė prieš: ");
+                    int priesNumeris = user_input.nextInt();
+                    rungtynes.prasizengimas(zaidejoNumeris, priesNumeris);
 //                    Prazanga
                     break;
                 case 5:
 //                    Minutes pertraukele
                     break;
                 case 6:
+                    rungtynes.toString();
 //                    Rungtyniu pabaiga
                     break;
                 default:

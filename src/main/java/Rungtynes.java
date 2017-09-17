@@ -36,6 +36,10 @@ public class Rungtynes {
         this.antrosKomandosTaskuSkaicius = antrosKomandosTaskuSkaicius;
     }
 
+    public Taisykles getTaisykles() {
+        return taisykles;
+    }
+
     public void isNew(){
         File f = new File("C:/Users/Tomas/Desktop/PI15B/JAVA/PirmaUzduotis/rungtyniuLog.txt");
         f.delete();
@@ -53,7 +57,7 @@ public class Rungtynes {
                 if (pirmaKomanda.getZaidejai().get(i).getNumeris() == numeris){
                     setPirmosKomandosTaskuSkaicius(pirmosKomandosTaskuSkaicius + taskuSkaicius);
                     content = pirmaKomanda.getZaidejai().get(i).getVardas() + " " +
-                            pirmaKomanda.getZaidejai().get(i).getPavarde() + " Pelnė " + taskuSkaicius + " taškus. " +
+                            pirmaKomanda.getZaidejai().get(i).getPavarde() + " Pelnė " + taskuSkaicius + " tašką(-us). " +
                             " Rezultatas: " + getPirmosKomandosTaskuSkaicius() + " - " + getAntrosKomandosTaskuSkaicius();
                     break;
                 }
@@ -62,7 +66,7 @@ public class Rungtynes {
                 if (antraKomanda.getZaidejai().get(i).getNumeris() == numeris){
                     setAntrosKomandosTaskuSkaicius(antrosKomandosTaskuSkaicius + taskuSkaicius);
                     content = antraKomanda.getZaidejai().get(i).getVardas() + " " +
-                            antraKomanda.getZaidejai().get(i).getPavarde() + " Pelnė " + taskuSkaicius + " taškus. " +
+                            antraKomanda.getZaidejai().get(i).getPavarde() + " Pelnė " + taskuSkaicius + " tašką(-us). " +
                             " Rezultatas: " + getPirmosKomandosTaskuSkaicius() + " - " + getAntrosKomandosTaskuSkaicius();;
 
                     break;
@@ -89,14 +93,69 @@ public class Rungtynes {
         }
     }
 
+    public void prasizengimas(int numeris, int pries){
+        String fileName = "C:/Users/Tomas/Desktop/PI15B/JAVA/PirmaUzduotis/rungtyniuLog.txt";
+        FileWriter fw = null;
+        BufferedWriter bw = null;
+        String content = "";
+        Zaidejas rastasPrasizenges = new Zaidejas();
+        Zaidejas priesZaidejas = new Zaidejas();
+        try {
+            fw = new FileWriter(fileName, true);
+            bw = new BufferedWriter(fw);
+        for (int i = 0; i < pirmaKomanda.getZaidejai().size(); i++) {
+            if (pirmaKomanda.getZaidejai().get(i).getNumeris() == numeris){
+                rastasPrasizenges = pirmaKomanda.getZaidejai().get(i);
+                rastasPrasizenges.setPrazanguSkaicius(rastasPrasizenges.getPrazanguSkaicius() + 1);
+            } else if(pirmaKomanda.getZaidejai().get(i).getNumeris() == pries){
+                priesZaidejas = pirmaKomanda.getZaidejai().get(i);
+            }
+
+            if (antraKomanda.getZaidejai().get(i).getNumeris() == numeris){
+                rastasPrasizenges = antraKomanda.getZaidejai().get(i);
+                rastasPrasizenges.setPrazanguSkaicius(rastasPrasizenges.getPrazanguSkaicius() + 1);
+            } else if(antraKomanda.getZaidejai().get(i).getNumeris() == pries){
+                priesZaidejas = antraKomanda.getZaidejai().get(i);
+            }
+
+            content = rastasPrasizenges.getVardas()
+                    + " " + rastasPrasizenges.getPavarde() + " prasižengė prieš " +
+                    priesZaidejas.getVardas() + " " + priesZaidejas.getPavarde();
+            ;
+
+        }
+            bw.write(content);
+            bw.newLine();
+
+        } catch (IOException e){
+            System.out.println(e.getMessage());
+        } finally {
+
+            try {
+
+                if (bw != null)
+                    bw.close();
+
+                if (fw != null)
+                    fw.close();
+
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
+
+    }
+
     @Override
     public String toString() {
         if(pirmosKomandosTaskuSkaicius >= antrosKomandosTaskuSkaicius){
-            return pirmaKomanda + " " + pirmosKomandosTaskuSkaicius + " - "
-                    + antrosKomandosTaskuSkaicius + " " + antraKomanda + "\nLaimi " + pirmaKomanda;
+            System.out.println(pirmaKomanda.getPavadinimas() + " " + pirmosKomandosTaskuSkaicius + " - "
+                    + antrosKomandosTaskuSkaicius + " " + antraKomanda.getPavadinimas() + "\nLaimi " + pirmaKomanda.getPavadinimas());
+            return "Laimėjo Pirma komanda";
         } else {
-            return pirmaKomanda + " " + pirmosKomandosTaskuSkaicius + " - "
-                    + antrosKomandosTaskuSkaicius + " " + antraKomanda + "\nLaimi " + antraKomanda;
+            System.out.println(pirmaKomanda.getPavadinimas() + " " + pirmosKomandosTaskuSkaicius + " - "
+                    + antrosKomandosTaskuSkaicius + " " + antraKomanda.getPavadinimas() + "\nLaimi " + antraKomanda.getPavadinimas());
+            return "Laimėjo antra komanda";
         }
     }
 }

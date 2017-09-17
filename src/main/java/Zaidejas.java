@@ -4,6 +4,7 @@ public class Zaidejas {
     private double ugis;
     private int amzius;
     private int numeris;
+    private int prazanguSkaicius;
 
     public Zaidejas(String vardas, String pavarde, double ugis, int amzius, int numeris) {
         this.vardas = vardas;
@@ -12,6 +13,7 @@ public class Zaidejas {
         this.amzius = amzius;
         this.numeris = numeris;
     }
+    public Zaidejas(){};
 
     public int getNumeris() {
         return numeris;
@@ -23,6 +25,14 @@ public class Zaidejas {
 
     public String getPavarde() {
         return pavarde;
+    }
+
+    public int getPrazanguSkaicius() {
+        return prazanguSkaicius;
+    }
+
+    public void setPrazanguSkaicius(int prazanguSkaicius) {
+        this.prazanguSkaicius = prazanguSkaicius;
     }
 
     @Override

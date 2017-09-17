@@ -12,6 +12,10 @@ public class Komanda {
         this.treneris = treneris;
     }
 
+    public String getPavadinimas() {
+        return pavadinimas;
+    }
+
     public List<Zaidejas> getZaidejai() {
         return zaidejai;
     }
