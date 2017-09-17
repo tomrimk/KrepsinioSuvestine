@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>Arena</OriginalElement>
+  <nodes>
+    <node x="214.5" y="266.5">Komanda</node>
+    <node x="425.35144230769225" y="0.0">Zaidejas</node>
+    <node x="372.8670364891518" y="466.0">Rungtynes</node>
+    <node x="574.8824211045364" y="255.0">Teisejas</node>
+    <node x="36.5" y="289.0">Taisykles</node>
+    <node x="405.8181213017751" y="807.0">Main</node>
+    <node x="214.9351331360947" y="33.5">Treneris</node>
+    <node x="840.8824211045364" y="300.0">Arena</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="Main" target="Taisykles">
+      <point x="-141.23076923076923" y="-58.5" />
+      <point x="494.08735207100585" y="767.0" />
+      <point x="81.56812130177508" y="767.0" />
+      <point x="81.56812130177508" y="446.0" />
+      <point x="95.75" y="446.0" />
+      <point x="-19.75" y="36.5" />
+    </edge>
+    <edge source="Rungtynes" target="Arena">
+      <point x="146.53846153846155" y="-125.5" />
+      <point x="709.9054980276134" y="436.0" />
+      <point x="858.6324211045364" y="436.0" />
+      <point x="-53.25" y="25.5" />
+    </edge>
+    <edge source="Main" target="Rungtynes">
+      <point x="-35.307692307692264" y="-58.5" />
+      <point x="600.0104289940828" y="737.0" />
+      <point x="468.1170364891518" y="737.0" />
+      <point x="-95.25" y="125.5" />
+    </edge>
+    <edge source="Main" target="Teisejas">
+      <point x="70.61538461538464" y="-58.5" />
+      <point x="705.9335059171597" y="747.0" />
+      <point x="788.5758012820513" y="747.0" />
+      <point x="788.5758012820513" y="426.0" />
+      <point x="796.2824211045364" y="426.0" />
+      <point x="98.39999999999998" y="70.5" />
+    </edge>
+    <edge source="Main" target="Treneris">
+      <point x="-211.84615384615387" y="-58.5" />
+      <point x="423.4719674556212" y="787.0" />
+      <point x="26.0" y="787.0" />
+      <point x="26.0" y="235.0" />
+      <point x="233.9351331360947" y="235.0" />
+      <point x="-76.0" y="59.0" />
+    </edge>
+    <edge source="Main" target="Zaidejas">
+      <point x="176.53846153846155" y="-58.5" />
+      <point x="811.8565828402366" y="777.0" />
+      <point x="993.3824211045364" y="777.0" />
+      <point x="993.3824211045364" y="235.0" />
+      <point x="630.8514423076922" y="235.0" />
+      <point x="68.5" y="92.5" />
+    </edge>
+    <edge source="Main" target="Komanda">
+      <point x="-105.9230769230769" y="-58.5" />
+      <point x="529.3950443786982" y="757.0" />
+      <point x="267.87825443786977" y="757.0" />
+      <point x="267.87825443786977" y="446.0" />
+      <point x="251.125" y="446.0" />
+      <point x="-109.875" y="59.0" />
+    </edge>
+    <edge source="Rungtynes" target="Teisejas">
+      <point x="58.61538461538464" y="-125.5" />
+      <point x="621.9824211045365" y="446.0" />
+      <point x="599.4824211045365" y="446.0" />
+      <point x="-98.39999999999998" y="70.5" />
+    </edge>
+    <edge source="Rungtynes" target="Komanda">
+      <point x="-87.92307692307685" y="-125.5" />
+      <point x="475.44395956607497" y="446.0" />
+      <point x="470.875" y="446.0" />
+      <point x="109.875" y="59.0" />
+    </edge>
+    <edge source="Rungtynes" target="Taisykles">
+      <point x="-175.8461538461538" y="-125.5" />
+      <point x="387.520882642998" y="436.0" />
+      <point x="135.25" y="436.0" />
+      <point x="19.75" y="36.5" />
+    </edge>
+    <edge source="Main" target="Arena">
+      <point x="105.9230769230769" y="-58.5" />
+      <point x="741.241198224852" y="757.0" />
+      <point x="932.2181213017751" y="757.0" />
+      <point x="932.2181213017751" y="446.0" />
+      <point x="929.6324211045364" y="446.0" />
+      <point x="17.75" y="25.5" />
+    </edge>
+    <edge source="Komanda" target="Zaidejas">
+      <point x="36.62499999999994" y="-59.0" />
+      <point x="397.62499999999994" y="235.0" />
+      <point x="448.1847756410256" y="235.0" />
+      <point x="-114.16666666666663" y="92.5" />
+    </edge>
+    <edge source="Rungtynes" target="Treneris">
+      <point x="-58.61538461538453" y="-125.5" />
+      <point x="504.7516518737673" y="446.0" />
+      <point x="527.6642998027613" y="446.0" />
+      <point x="527.6642998027613" y="225.0" />
+      <point x="347.9351331360947" y="225.0" />
+      <point x="38.0" y="59.0" />
+    </edge>
+    <edge source="Rungtynes" target="Zaidejas">
+      <point x="29.307692307692264" y="-125.5" />
+      <point x="592.6747287968441" y="436.0" />
+      <point x="560.7324211045365" y="436.0" />
+      <point x="560.7324211045365" y="235.0" />
+      <point x="585.1847756410255" y="235.0" />
+      <point x="22.833333333333258" y="92.5" />
+    </edge>
+    <edge source="Komanda" target="Treneris">
+      <point x="-109.87500000000006" y="-59.0" />
+      <point x="251.12499999999994" y="235.0" />
+      <point x="271.9351331360947" y="235.0" />
+      <point x="-38.0" y="59.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="560.5" y="606.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

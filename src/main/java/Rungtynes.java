@@ -1,3 +1,5 @@
+import org.joda.time.DateTime;
+
 import java.io.*;
 
 public class Rungtynes {
@@ -43,17 +45,19 @@ public class Rungtynes {
     }
 
     public void pelnytiTaskai(int numeris, int taskuSkaicius){
+        DateTime dt = new DateTime();
         String fileName = "C:/Users/Tomas/Desktop/PI15B/JAVA/PirmaUzduotis/rungtyniuLog.txt";
         FileWriter fw = null;
         BufferedWriter bw = null;
-        String content = "";
+        String content = "[" + dt.getHourOfDay() + ":" + dt.getMinuteOfHour()
+                + ":" + dt.getSecondOfMinute() + "] ";
         try {
             fw = new FileWriter(fileName, true);
             bw = new BufferedWriter(fw);
             for (int i = 0; i < pirmaKomanda.getZaidejai().size(); i++) {
                 if (pirmaKomanda.getZaidejai().get(i).getNumeris() == numeris){
                     setPirmosKomandosTaskuSkaicius(pirmosKomandosTaskuSkaicius + taskuSkaicius);
-                    content = pirmaKomanda.getZaidejai().get(i).getVardas() + " " +
+                    content += pirmaKomanda.getZaidejai().get(i).getVardas() + " " +
                             pirmaKomanda.getZaidejai().get(i).getPavarde() + " Pelnė " + taskuSkaicius + " tašką(-us). " +
                             " Rezultatas: " + getPirmosKomandosTaskuSkaicius() + " - " + getAntrosKomandosTaskuSkaicius();
                     break;
@@ -62,7 +66,7 @@ public class Rungtynes {
             for (int i = 0; i < antraKomanda.getZaidejai().size(); i++) {
                 if (antraKomanda.getZaidejai().get(i).getNumeris() == numeris){
                     setAntrosKomandosTaskuSkaicius(antrosKomandosTaskuSkaicius + taskuSkaicius);
-                    content = antraKomanda.getZaidejai().get(i).getVardas() + " " +
+                    content += antraKomanda.getZaidejai().get(i).getVardas() + " " +
                             antraKomanda.getZaidejai().get(i).getPavarde() + " Pelnė " + taskuSkaicius + " tašką(-us). " +
                             " Rezultatas: " + getPirmosKomandosTaskuSkaicius() + " - " + getAntrosKomandosTaskuSkaicius();;
 
@@ -81,9 +85,11 @@ public class Rungtynes {
 
     public void prasizengimas(int numeris, int pries){
         String fileName = "C:/Users/Tomas/Desktop/PI15B/JAVA/PirmaUzduotis/rungtyniuLog.txt";
+        DateTime dt = new DateTime();
         FileWriter fw = null;
         BufferedWriter bw = null;
-        String content = "";
+        String content = content = "[" + dt.getHourOfDay() + ":" + dt.getMinuteOfHour()
+                + ":" + dt.getSecondOfMinute() + "] ";
         Zaidejas rastasPrasizenges = new Zaidejas();
         Zaidejas priesZaidejas = new Zaidejas();
         try {
@@ -104,7 +110,7 @@ public class Rungtynes {
                 priesZaidejas = antraKomanda.getZaidejai().get(i);
             }
 
-            content = rastasPrasizenges.getVardas()
+            content += rastasPrasizenges.getVardas()
                     + " " + rastasPrasizenges.getPavarde() + " prasižengė prieš " +
                     priesZaidejas.getVardas() + " " + priesZaidejas.getPavarde();
             ;
@@ -123,18 +129,20 @@ public class Rungtynes {
 
     public void minutesPertraukele(int komanda){
         String fileName = "C:/Users/Tomas/Desktop/PI15B/JAVA/PirmaUzduotis/rungtyniuLog.txt";
+        DateTime dt = new DateTime();
         FileWriter fw = null;
         BufferedWriter bw = null;
-        String content = "";
+        String content = "[" + dt.getHourOfDay() + ":" + dt.getMinuteOfHour()
+                + ":" + dt.getSecondOfMinute() + "] ";
         Treneris treneris = new Treneris();
         try {
             if(komanda == 1){
                 treneris = pirmaKomanda.getTreneris();
-                content = "Pirmos komandos treneris " + treneris.getVardas() + " " + treneris.getPavarde()
+                content += "Pirmos komandos treneris " + treneris.getVardas() + " " + treneris.getPavarde()
                         + " paprašė minutės pertraukėlės.";
             } else {
                 treneris = antraKomanda.getTreneris();
-                content = "Antros komandos treneris " + treneris.getVardas() + " " + treneris.getPavarde()
+                content += "Antros komandos treneris " + treneris.getVardas() + " " + treneris.getPavarde()
                         + " paprašė minutės pertraukėlės.";
             }
 

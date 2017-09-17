@@ -1,0 +1,24 @@
+#Įvesti žaidėjų skaičių
+
+#Pasirinkti komandos žaidėjus
+
+#Suvesti komandos duomenis
+
+#Stebėti rungtynes
+    if pataiko dvitaski
+        pelnytiTaskai(zaidejoNumeris)
+
+    if pataiko tritaski
+        pelnytiTaskai(zaidejoNumeris)
+
+    if pataiko bauda
+        pelnytiTaskai(zaidejoNumeris)
+
+    if prazanga
+        prasižengimas(prasizengusioNumeris, prasizengePries)
+
+    if minutės pertraukėlė
+        minutesPertraukele(komandoa)
+
+    if baigesi rungtynės
+        end
