@@ -2,15 +2,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Rungtynes {
-    private String pirmaKomanda;
-    private String antraKomanda;
+    private Komanda pirmaKomanda;
+    private Komanda antraKomanda;
     private Teisejas teisėjas = new Teisejas();
     private int pirmosKomandosTaskuSkaicius = 0;
     private int antrosKomandosTaskuSkaicius = 0;
-    private String arena;
+    private Arena arena;
     private Taisykles taisykles;
 
-    public Rungtynes(String pirmaKomanda, String antraKomanda, Teisejas teisėjas, String arena, Taisykles taisykles) {
+    public Rungtynes(Komanda pirmaKomanda, Komanda antraKomanda, Teisejas teisėjas, Arena arena, Taisykles taisykles) {
         this.pirmaKomanda = pirmaKomanda;
         this.antraKomanda = antraKomanda;
         this.teisėjas = teisėjas;

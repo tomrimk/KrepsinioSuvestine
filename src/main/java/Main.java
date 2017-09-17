@@ -82,6 +82,7 @@ public class Main {
 
     public static void main(String[] args) {
 
+        Taisykles taisykles = new Taisykles();
         List<Komanda> komandos = new ArrayList<>();
         List<Teisejas> teisejai = new ArrayList<>();
         List<Zaidejas> zaidejai = new ArrayList<>();
@@ -120,6 +121,11 @@ public class Main {
         int ivestasTeisejas = user_input.nextInt();
         Teisejas pasirinktasTeisejas = teisejai.get(ivestasTeisejas-1);
 
+        System.out.println("Iveskite vietos pavadinimą, kurioje įvyks rungtynės: ");
+        String ivestaArena = user_input.next();
+        Arena arena = new Arena(ivestaArena);
+
+        Rungtynes rungtynes = new Rungtynes(pirmaKomanda,antraKomanda,pasirinktasTeisejas,arena,taisykles);
 
 
     }
